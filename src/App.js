@@ -1,6 +1,7 @@
 
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { actions } from './store';
 
 function App() {
 
@@ -11,16 +12,16 @@ function App() {
 
     //if u want to update the state, then use dispatch function
     //in dispatch, u need to provie=de the action
-    dispatch({type:"INC"})
+    dispatch(actions.increment())
   }
 
   const decrement = ()=>{
-    dispatch({type:"DEC"})
+    dispatch(actions.decrement())
   }
 
   //if we want to send data along use payload
   const addBy = ()=>{
-    dispatch({type:"ADD", payload:10 })
+    dispatch(actions.addBy(10))
   }
   
   return (
